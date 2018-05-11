@@ -108,9 +108,11 @@ abbr[title] {
 .jasmine_html-reporter {
     position: fixed;
     overflow: hidden;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: 0 0 20px black;
-    border-top: 5px solid #4caf50;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 10px 12px 20px #000000c7;
+    border: 3px solid #93508c;
+    width: 380px;
+    border-radius: 7px;
+    transition: opacity 300ms ease-in-out;
 }
