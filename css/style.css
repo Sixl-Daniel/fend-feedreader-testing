@@ -44,6 +44,7 @@ h2 {
     top: 0;
     width: 100%;
     padding: 0.5em 1em;
+    z-index: 200;
 }
 
 .icon-list {
@@ -60,7 +61,7 @@ h2 {
     width: 10em;
     transform: translate3d(0, 0, 0);
     transition: transform 0.2s ease-in-out;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .slide-menu ul {
