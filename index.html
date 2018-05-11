@@ -33,12 +33,13 @@
         <div class="feed"></div>
 
         <script class="tpl-entry" type="text/x-handlebars-template">
-            <a class="entry-link" href="{{link}}" target="_blank">
+            
                 <article class="entry">
-                    <h2>{{title}}</h2>
+                    <h2><strong>{{title}}</strong> <small>by {{author}}</small></h2>
                     <div class="summary">{{{summary}}}</div>
+                    <a class="entry-link button" href="{{link}}" target="_blank">Read article</a>
                 </article>
-            </a>
+            
         </script>
 
         <script class="tpl-feed-list-item" type="text/x-handlebars-template">

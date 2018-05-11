@@ -94,3 +94,23 @@ h2 {
 abbr[title] {
     text-decoration: none;
 }
+
+.button {
+    background-color: #4caf50;
+    color: #FFF;
+    font-weight: 700;
+    padding: 0.2em 1em 0.2em;
+    border-radius: 999px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.jasmine_html-reporter {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 20px black;
+    border-top: 5px solid #4caf50;
+}
