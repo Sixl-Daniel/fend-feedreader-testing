@@ -13,6 +13,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin: 0;
+    background-color: #9E9E9E;
 }
 
 a {
@@ -36,7 +37,7 @@ h2 {
 }
 
 .header {
-    background: #4caf50;
+    background: #007069;
     color: #fff;
     position: fixed;
     top: 0;
@@ -53,11 +54,12 @@ h2 {
     position: absolute;
     top: 3.5em;
     padding: 1em;
-    background: #4caf50;
+    background: #93508c;
     height: 100%;
     width: 10em;
     transform: translate3d(0, 0, 0);
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-in-out;
+    z-index: 9999;
 }
 
 .slide-menu ul {
@@ -78,17 +80,17 @@ h2 {
 
 .menu-hidden .slide-menu {
     transform: translate3d(-12em, 0, 0);
-    transition: transform 0.2s;
 }
 
 .feed {
-    margin: 4em 0 0;
+    margin: 4.5em 0 0;
 }
 
 .entry {
-    border-bottom: 1px solid #ddd;
     padding: 1em;
-    margin: 0.5em 0;
+    margin: 1em;
+    background-color: #fff;
+    border-radius: 3px;
 }
 
 abbr[title] {
@@ -96,13 +98,18 @@ abbr[title] {
 }
 
 .button {
-    background-color: #4caf50;
-    color: #FFF;
+    background-color: #007069;
+    color: #fff;
     font-weight: 700;
     padding: 0.2em 1em 0.2em;
     border-radius: 999px;
     margin-top: 15px;
     display: inline-block;
+    transition: background-color 200ms linear;
+}
+
+.button:hover {
+    background-color: #93508c;
 }
 
 .jasmine_html-reporter {
