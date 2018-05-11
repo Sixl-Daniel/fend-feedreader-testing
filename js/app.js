@@ -29,9 +29,33 @@ var allFeeds = [
         url: 'http://feeds.feedburner.com/labnol'
     },
     {
+        name: 'Codrops',
+        url: 'http://feeds2.feedburner.com/tympanus'
+    },
+    {
         name: 'How-To Geek',
         url: 'http://feeds.feedburner.com/HowToGeek'
-    }
+    },
+    {
+        name: 'Smashingmagazine',
+        url: 'https://www.smashingmagazine.com/feed/'
+    },
+    {
+        name: 'Tutorialzine',
+        url: 'https://tutorialzine.com/feed/'
+    },
+    {
+        name: 'JavaScript Weekly',
+        url: 'https://javascriptweekly.com/rss/'
+    },
+    {
+        name: 'Web Design Weekly',
+        url: 'http://web-design-weekly.com/feed/'
+    },
+    {
+        name: 'David Walsh Blog',
+        url: 'https://davidwalsh.name/feed'
+    },
 ];
 
 /* This function starts up our application. The Google Feed
