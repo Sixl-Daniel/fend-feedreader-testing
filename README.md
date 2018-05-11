@@ -47,3 +47,7 @@ Open your browse and go to http://127.0.0.1:8080 to start the application.
 
 - **Regular Expression for URL validation by Diego Perini**  
 [https://gist.github.com/dperini/729294](https://gist.github.com/dperini/729294)
+
+### Generators
+
+Background by [SVGBackgrounds.com](https://www.svgbackgrounds.com/)
