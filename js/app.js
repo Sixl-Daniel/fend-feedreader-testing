@@ -11,15 +11,26 @@ var allFeeds = [
     {
         name: 'Udacity Blog',
         url: 'http://blog.udacity.com/feed'
-    }, {
+    },
+    {
         name: 'CSS Tricks',
         url: 'http://feeds.feedburner.com/CssTricks'
-    }, {
+    },
+    {
         name: 'HTML5 Rocks',
         url: 'http://feeds.feedburner.com/html5rocks'
-    }, {
+    },
+    {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+    },
+    {
+        name: 'Digital Inspiration Technology Blog',
+        url: 'http://feeds.feedburner.com/labnol'
+    },
+    {
+        name: 'How-To Geek',
+        url: 'http://feeds.feedburner.com/HowToGeek'
     }
 ];
 
