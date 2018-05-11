@@ -4,7 +4,7 @@
 
 **PERKS**
 - Fading effect when switching feeds
-- Summary added
+- Author and summary added
 
 ## Getting started
 
