@@ -14,7 +14,8 @@ $(function() {
             menuIcon = $('.menu-icon-link'),
             feedContainer = $('.feed');
 
-    let initialFeedContent = null;
+    let initialFeedContent = 
+        newFeedContent = null;
 
     /* Regular Expression for URL validation by Diego Perini - https://gist.github.com/dperini/729294 */
 
@@ -62,24 +63,25 @@ $(function() {
     describe('RSS Feeds', function() {
 
         it('are defined', function() {
+            // check if array „allFeeds” is defined, then check if not empty
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
         it('have a valid URL', function () {
-            for (feed of allFeeds) {
-                // console.log(feed.url);
+            allFeeds.forEach(function (feed) {
+                // check if URL is defined, then check for validity
                 expect(feed.url).toBeDefined();
                 expect(feed.url).toMatch(regExpWebURL);
-            }
+            })
         });
 
         it('have a name', function () {
-            for (feed of allFeeds) {
-                // console.log(feed.name);
+            allFeeds.forEach(function (feed) {
+                // check if name is defined, then check if not empty
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
-            }
+            });
         });
 
     });
@@ -98,10 +100,10 @@ $(function() {
             // check initial state
             expect(body.hasClass('menu-hidden')).toBe(true);
             // open menu on first click
-            menuIcon.click();
+            menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(false);
             // close menu on second click
-            menuIcon.click();
+            menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
@@ -135,21 +137,25 @@ $(function() {
         beforeEach(function (done) {
 
             /* load initial feed with index 0 */
+            loadFeed(0);
             initialFeedContent = feedContainer.html();
 
             /* initial feed had index 0 - load index 1 now */
-            loadFeed(1, done);
+            loadFeed(1, function(){
+                newFeedContent = feedContainer.html();
+                done();
+            });
 
         });
 
-        it("has different content", function () {
+        it("has different content", function (done) {
 
             /* a minimum of two feeds is required */
             expect(allFeeds.length).toBeGreaterThan(1);
             
             /* compare generated HTML */
-            newFeedContent = feedContainer.html();
             expect(newFeedContent).not.toBe(initialFeedContent);
+            done();
 
         });
 
