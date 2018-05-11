@@ -1,6 +1,6 @@
 *,
 *:after,
-*:before: {
+*:before {
     box-sizing: inherit;
 }
 
@@ -119,20 +119,44 @@ abbr[title] {
 .jasmine_html-reporter {
     position: fixed;
     overflow: hidden;
-    left: 20px;
-    top: 80px;
-    box-shadow: 10px 12px 20px #000000c7;
-    border: 3px solid #93508c;
-    width: 380px;
-    max-height: 80%;
-    border-radius: 7px;
-    transition: opacity 300ms ease-in-out;
-    overflow: hidden;
-    resize: both;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    transform: translate3d(-100%, 0, 0);
+    transition: all 300ms 100ms ease-in-out;
+    overflow: auto;
+    opacity: 1;
+    z-index: 500;
 }
 
-@media screen and (max-width: 480px) {
-    .jasmine_html-reporter {
-        display: none;
-    }
+.jasmin-visible {
+    overflow: hidden;
+}
+
+.jasmin-visible .jasmine_html-reporter {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+#btn_jasmin {
+    border: none;
+    text-indent: -9999em;
+    background: transparent url('../img/146px-Logo_jasmine.svg.png') no-repeat center center scroll;
+    background-size: contain;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: all 300ms ease-in-out;
+    transform: rotate(-180deg);
+    z-index: 600;
+}
+
+#btn_jasmin:hover,
+#btn_jasmin:focus {
+    transform: rotate(0);
+    outline: none;
 }

@@ -2,6 +2,10 @@
 
 *A practice project for the Udacity Front End Web Developer Nanodegree Program*
 
+This exercise is about [Jasmine](https://jasmine.github.io/), a behavior-driven development framework for testing JavaScript code. This application is using [Jasmine version 2.1.0](https://jasmine.github.io/2.1/introduction.html).
+
+To see the test suites, click the icon in the bottom right corner.
+
 **PERKS**
 - Fading effect when switching feeds
 - Author and summary added

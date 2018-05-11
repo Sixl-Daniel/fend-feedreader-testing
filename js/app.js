@@ -130,7 +130,8 @@ $(function() {
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
         feedId = 0,
-        menuIcon = $('.menu-icon-link');
+        menuIcon = $('.menu-icon-link'),
+        btnJasmin = $('#btn_jasmin');
 
     /* Loop through all of our feeds, assigning an id property to
      * each of the feeds based upon its index within the array.
@@ -163,4 +164,9 @@ $(function() {
     menuIcon.on('click', function() {
         $('body').toggleClass('menu-hidden');
     });
+
+    btnJasmin.on('click', function () {
+        $('body').toggleClass('jasmin-visible');
+    });
+
 }());
