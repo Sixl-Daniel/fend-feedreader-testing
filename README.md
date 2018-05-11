@@ -1,4 +1,4 @@
-# Feed Reader Testing 📰
+# Project „Feed Reader Testing” 📰
 
 *A practice project for the Udacity Front End Web Developer Nanodegree Program*
 
