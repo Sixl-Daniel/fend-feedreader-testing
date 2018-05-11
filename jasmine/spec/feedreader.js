@@ -8,10 +8,13 @@ $(function() {
      * Define variables for test suite scope
      */
 
-    /* pointers to DOM nodes */
+    /* variables, constants, pointers to DOM nodes */
 
     const   body = $('body'),
-            menuIcon = $('.menu-icon-link');
+            menuIcon = $('.menu-icon-link'),
+            feedContainer = $('.feed');
+
+    let initialFeedContent = null;
 
     /* Regular Expression for URL validation by Diego Perini - https://gist.github.com/dperini/729294 */
 
@@ -92,6 +95,8 @@ $(function() {
         });
 
         it('toggles it\'s visibility state correctly', function () {
+            // check initial state
+            expect(body.hasClass('menu-hidden')).toBe(true);
             // open menu on first click
             menuIcon.click();
             expect(body.hasClass('menu-hidden')).toBe(false);
@@ -102,11 +107,14 @@ $(function() {
 
     });
 
+    /* 
+     * Initial entries test suite
+     */
+
     describe('Initial Entries', function () {
 
         beforeEach(function (done) {
-            const randomChannel = Math.floor(Math.random() * allFeeds.length);
-            loadFeed(randomChannel, function () {
+            loadFeed(0, function () {
                 done();
             });
         });
@@ -118,12 +126,32 @@ $(function() {
 
     });
 
+    /* 
+     * New feed selection test suite
+     */
+
     describe('New Feed Selection', function () {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        beforeEach(function (done) {
+
+            /* load initial feed with index 0 */
+            initialFeedContent = feedContainer.html();
+
+            /* initial feed had index 0 - load index 1 now */
+            loadFeed(1, done);
+
+        });
+
+        it("has different content", function () {
+
+            /* a minimum of two feeds is required */
+            expect(allFeeds.length).toBeGreaterThan(1);
+            
+            /* compare generated HTML */
+            newFeedContent = feedContainer.html();
+            expect(newFeedContent).not.toBe(initialFeedContent);
+
+        });
 
     });
 
