@@ -135,28 +135,25 @@ $(function() {
     describe('New Feed Selection', function () {
 
         beforeEach(function (done) {
-
             /* load initial feed with index 0 */
-            loadFeed(0);
-            initialFeedContent = feedContainer.html();
-
-            /* initial feed had index 0 - load index 1 now */
-            loadFeed(1, function(){
-                newFeedContent = feedContainer.html();
-                done();
+            loadFeed(0, function () {
+                /* feed 0 done loading  */
+                initialFeedContent = feedContainer.html();
+                loadFeed(1, function () {
+                    /* feed 1 done loading  */
+                    newFeedContent = feedContainer.html();
+                    /* all done - ready for testing*/
+                    done();
+                });
             });
-
         });
 
         it("has different content", function (done) {
-
             /* a minimum of two feeds is required */
             expect(allFeeds.length).toBeGreaterThan(1);
-            
             /* compare generated HTML */
             expect(newFeedContent).not.toBe(initialFeedContent);
             done();
-
         });
 
     });
