@@ -48,6 +48,10 @@ h2 {
     z-index: 200;
 }
 
+.header-title span {
+    font-weight: 900;
+}
+
 .icon-list {
     font-size: 1.5em;
     color: #FFF;
